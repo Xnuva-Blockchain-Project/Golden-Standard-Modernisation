@@ -1,23 +1,38 @@
-# Golden Standard Cryptocurrency Modernisation Handbook (GSH)
+# Golden Standard Cryptocurrency Modernisation (GSH)
 
 **Reliability first. Release second.**
 
-This is the canonical home of the **Golden Standard Cryptocurrency Modernisation Handbook**, a living engineering checklist for preserving historical cryptocurrency networks while qualifying upgrades safely.
+This repository is the canonical engineering handbook and evidence *index* for the five-coin programme. It deliberately separates **shared rules**, **the common RandomX module**, and **each cryptocurrency's history and qualification**.
 
-**Current handbook:** [GOLDEN_STANDARD_CRYPTO_MODERNISATION.md](GOLDEN_STANDARD_CRYPTO_MODERNISATION.md) — v1.16 (draft), 23 November 2026.
+## Start here
 
-## Scope
+| Area | Where to go | Purpose |
+|---|---|---|
+| Shared standards | [standards/](standards/README.md) | Safety, backups, historical continuity, independent network acceptance and release/rollback gates |
+| **RandomX module** | [randomx/](randomx/README.md) | Common PoW implementation, seed/epoch and adversarial-test rules |
+| RandomX test register | [35-item checklist](randomx/checklist.md) | TaoX baseline results **and** remaining gates |
+| Coin-specific records | [coins/](coins/README.md) | Separate history, checkpoints, checksums and outstanding tests per coin |
+| Evidence and checksums | [evidence/](evidence/README.md) | SHA-256, test logs, binary/source provenance and sign-off templates |
+| Complete historical handbook | [GSH v1.16 archive](GOLDEN_STANDARD_CRYPTO_MODERNISATION.md) | Original full text, including all previous revision history, unchanged |
 
-Applies to **TaoX/TAO Revival, Europa (ERA), Zeus (ZUS), Hopium (HOPE), and XNUVA**, as well as reusable RandomX and other consensus modernisation work.
+## Cryptocurrency records
 
-The handbook includes historical chain preservation, RandomX contextual proof of work, P2P adversarial checks, wallet recovery, mined reward maturity, transaction confirmation, regression checklists, evidence records, release gates, and rollback requirements. Section **16.11** contains a **35-item TaoX completed/outstanding test register** and a per-coin migration worksheet.
+| Coin | History and tests | RandomX migration status |
+|---|---|---|
+| TaoX / TAO Revival | [TAOX](coins/TAOX/README.md) | Experimental regtest qualification, **release HOLD** |
+| Europa (ERA) | [ERA](coins/ERA/README.md) · [historical observations](coins/ERA/history.md) | Not yet qualified under this checklist |
+| Zeus (ZUS) | [ZUS](coins/ZUS/README.md) · [historical observations](coins/ZUS/history.md) | Not yet qualified under this checklist; PoW **and** PoS |
+| Hopium (HOPE) | [HOPE](coins/HOPE/README.md) · [historical observations](coins/HOPE/history.md) | Not yet qualified under this checklist |
+| XNUVA | [XNUVA](coins/XNUVA/README.md) · [historical observations](coins/XNUVA/history.md) | Existing RandomX operations require separate review |
 
-## Status and safety
+## How to record engineering progress
 
-The handbook is a **draft engineering standard, not a declaration of software release readiness**. Tests are scoped to their evidenced environment; a PASS for one coin does not qualify another. Mainnet algorithm activation requires independent review and explicit approval. Do not commit private keys, RPC credentials, or sensitive infrastructure logs.
+For each coin, add a dated, traceable checkpoint, identify the exact Git commit, binary SHA-256, fixtures, chain tip/block hashes, expected and actual results, reviewer and remaining defects. Record **completed**, **outstanding** and **blocked** tests separately. Keep wallet backups, authentication tokens, raw private operational logs and keys **out** of public GitHub. A Git commit hash is not a substitute for a binary checksum.
 
-## Provenance
+A RandomX core test PASS does **not** qualify ERA, ZUS, HOPE, TaoX or XNUVA by itself. A single coin's test PASS does not transfer to any other coin. No release, mainnet algorithm activation, monetary change or live-network cutover is implied by documentation.
 
-The v1.16 handbook was copied **without changing its contents** from [the original XNUVA GSH development branch](https://github.com/Xnuva-Blockchain-Project/Xnuva/blob/docs/golden-standard-modernisation-handbook-v1/doc/engineering-standards/GOLDEN_STANDARD_CRYPTO_MODERNISATION.md). Its embedded revision history (v1.0–v1.16) is preserved. Earlier Git commits remain in the source repository; copying a file does **not** transfer its Git commit ancestry.
+## History and provenance
 
-The old copy is retained as a historical reference. **Make all future handbook updates in this repository.**
+The complete v1.16 draft handbook was copied byte-for-byte in Git content from the [original XNUVA development branch](https://github.com/Xnuva-Blockchain-Project/Xnuva/blob/docs/golden-standard-modernisation-handbook-v1/doc/engineering-standards/GOLDEN_STANDARD_CRYPTO_MODERNISATION.md). Its **embedded** 1.0–1.16 revision history is preserved in the [archive](GOLDEN_STANDARD_CRYPTO_MODERNISATION.md), while the original repository retains prior Git commit ancestry. The new modular records are navigation and qualified excerpts, not automatic changes to earlier evidence.
+
+**The original archive is retained unchanged.** New records should go into the appropriate per-coin or shared-module area, rather than extending one giant chronological document.
