@@ -2,7 +2,7 @@
 
 **Reliability first. Release second.**
 
-This repository is the canonical engineering handbook and evidence *index* for the five-coin programme. It deliberately separates **shared rules**, **the common RandomX module**, and **each cryptocurrency's history and qualification**.
+This repository is the canonical engineering handbook and evidence *index* for the five-coin RandomX programme plus AMLToken Revival preservation. It deliberately separates **shared rules**, **the common RandomX module**, and **each cryptocurrency's history and qualification**.
 
 ## Start here
 
@@ -24,6 +24,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 | Zeus (ZUS) | [ZUS](coins/ZUS/README.md) · [historical observations](coins/ZUS/history.md) | Not yet qualified under this checklist; PoW **and** PoS |
 | Hopium (HOPE) | [HOPE](coins/HOPE/README.md) · [historical observations](coins/HOPE/history.md) | Not yet qualified under this checklist |
 | XNUVA | [XNUVA](coins/XNUVA/README.md) · [historical observations](coins/XNUVA/history.md) | Existing RandomX operations require separate review |
+| AMLToken Revival (ABTC precursor) | [history and checksums](coins/AMLToken-Revival/README.md) · [test register](coins/AMLToken-Revival/tests.md) | **STASIS — historical SHA256d recovery, not in current RandomX rollout** |
 
 ## How to record engineering progress
 
