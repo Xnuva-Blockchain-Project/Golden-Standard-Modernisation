@@ -9,6 +9,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 | Area | Where to go | Purpose |
 |---|---|---|
 | Shared standards | [standards/](standards/README.md) | Safety, backups, historical continuity, independent network acceptance and release/rollback gates |
+| **Node operator privacy** | [Tor, SOCKS5 and VPN guide](standards/NODE_PRIVACY_TOR_SOCKS5.md) | Optional node networking, current per-coin caveats, troubleshooting and privacy checks |
 | **Long-term independence** | [Project Independence, Decentralisation and Long-Term Survival](standards/PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) | Permissionless participation, distributed operation and founder-independent continuity |
 | **RandomX module** | [randomx/](randomx/README.md) | Common PoW implementation, seed/epoch and adversarial-test rules |
 | RandomX test register | [35-item checklist](randomx/checklist.md) | TaoX baseline results **and** remaining gates |

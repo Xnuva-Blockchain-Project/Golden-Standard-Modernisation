@@ -2,6 +2,10 @@
 
 This area defines universal release gates for every coin, miner, wallet, node, and treasury integration. It is independent of any one consensus implementation.
 
+## Optional node privacy for the public
+
+For beginner-friendly Tor, SOCKS5 proxy and VPN setup, per-coin compatibility warnings, and independent leak-testing requirements, see the [public node privacy guide](NODE_PRIVACY_TOR_SOCKS5.md). **No coin has been declared Tor-qualified merely because its source advertises proxy settings.**
+
 ## Project Independence, Decentralisation and Long-Term Survival
 
 The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) sets a 16-point per-coin checklist for reproducible builds, permissionless nodes, monetary integrity, infrastructure independence, successor maintainers and founder-absence testing. It is a **new engineering obligation, not a claim that any coin has already qualified**.
