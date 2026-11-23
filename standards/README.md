@@ -2,6 +2,10 @@
 
 This area defines universal release gates for every coin, miner, wallet, node, and treasury integration. It is independent of any one consensus implementation.
 
+## Project Independence, Decentralisation and Long-Term Survival
+
+The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) sets a 16-point per-coin checklist for reproducible builds, permissionless nodes, monetary integrity, infrastructure independence, successor maintainers and founder-absence testing. It is a **new engineering obligation, not a claim that any coin has already qualified**.
+
 ## Mandatory release gates
 
 - Preserve genesis, historical blocks, balances, signing formats, and wallet recovery.
