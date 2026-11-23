@@ -9,6 +9,7 @@ Each coin has a **dedicated home** for chronology, testing, hashes and outstandi
 | Zeus (ZUS) | [ZUS](ZUS/README.md) | Both Proof of Work **and** Proof of Stake; aggregate reward accounting |
 | Hopium (HOPE) | [HOPE](HOPE/README.md) | Prospective capped-supply safeguards, no retrospective changes |
 | XNUVA | [XNUVA](XNUVA/README.md) | Existing RandomX and wallet/game-treasury dependencies |
+| AMLToken Revival (ABTC precursor) | [AMLToken Revival](AMLToken-Revival/README.md) · [test register](AMLToken-Revival/tests.md) | **STASIS**: historical SHA256d chain recovery; NOT a current RandomX migration |
 
 **Required entries for every coin:** history, source/binary hashes, chronological checkpoint references, completed tests, outstanding tests, release blockers, recovery/rollback and reviewer sign-off. Use [evidence templates](../evidence/README.md) and the [shared checklist](../randomx/checklist.md).
 
