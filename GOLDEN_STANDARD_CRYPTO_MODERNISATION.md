@@ -4,7 +4,7 @@
 
 > Public engineering baseline; historical observations are not release approvals. Never commit private keys, credentials, unredacted personal data or sensitive infrastructure details.
 
-**Document ID:** GS-CM-001 \| Version: 1.16 (draft) \| Baseline: 18 November 2026
+**Document ID:** GS-CM-001 \| Version: 1.17 (draft) \| Baseline: 18 November 2026
 
 Applies to TAO Revival, XNUVA, ERA, ZUS, HOPE and every future core,
 miner, wallet, node, network or game-treasury modernisation.
@@ -956,9 +956,122 @@ REVIEWER / DATE / RELEASE DECISION:
 | 1.14 (draft) | 22 November 2026 | Confirm GDB legacy GetStats unsafe nullable best-block dereference, defer legacy repair and mandate source + negative executable regression qualification in modern TaoX and other coins | Operator CP137J-AU–BA; precise absent-record trigger not proven; modern negative gate OPEN |
 | 1.15 (draft) | 23 November 2026 | Record TaoX CP25E–25X isolated contextual RandomX/P2P, wrong-seed rejection, independent wallet restoration, confirmed spending, restart persistence and GitHub development synchronisation; clarify remaining release blockers | Operator-supplied CP25 logs and local evidence report hash; public release and mainnet activation NOT approved |
 | 1.16 (draft) | 23 November 2026 | Add mandatory 35-item TaoX RandomX completed/outstanding test register; reusable ERA/ZUS/HOPE/XNUVA migration worksheet, per-test evidence schema and explicit no-cross-coin-PASS rules | Operator-requested reusable checklist; baseline from CP25 and prior handbook; all public release gates remain OPEN |
+| 1.17 (draft) | 23 November 2026 | Add proposed Version 2 cryptographic-agility and post-quantum-readiness chapter, separate inert modular architecture from later independent consensus activation; coin-specific migration and testing checklist | Design-only policy based on operator request and NIST/IETF public references; no implementation, activation, security claim or release gate PASS |
+
+
+# 17. Cryptographic Agility and Post-Quantum Readiness — proposed Version 2 architecture (23 November 2026)
+
+**Status: DESIGN REQUIREMENT ONLY — no coin implementation, live activation, release qualification or quantum-resistance claim.** This chapter concerns a proposed *Version 2 software architecture* for TAO Revival/TaoX, XNUVA, ERA, ZUS and HOPE. The handbook itself remains in its 1.x draft series.
+
+## 17.1 Purpose and non-negotiable principles
+
+The five coins should become easier to adapt to advances in cryptography without needing an uncontrolled rebuild of unrelated systems. Reusable, tested, versioned interfaces should allow a future maintainer — human or AI — to propose replacements and independently validate their effects. The modular RandomX work is a useful architectural precedent, **not evidence that transaction signatures, wallet keys, scripts or consensus rules can be swapped with a single setting**.
+
+- **Reliability first, release second.** Historical blockchain identity, genesis, transaction validity, UTXOs/balances, wallet ownership, address formats, monetary policy, and legacy verification must not change accidentally.
+- **Cryptographic agility is a design property, not a security guarantee.** A pluggable component that has not been vetted, activated safely and independently tested is not quantum-resistant.
+- No silently activated fork, retrospective validation rewrite, re-genesis, reset, confiscation, stranded balances, mandatory irreversible wallet conversion, or production experimentation.
+- Architectural readiness may be shipped **inactive** in a future Version 2 release after full compatibility qualification. An actual network rule change is a **separate**, explicitly approved, forward-activated release with independent real-network evidence and community/peer coordination.
+- Consensus code must bind algorithm identifiers, versioned parameters and activation conditions *deterministically* to the chain and transaction context. Do not permit runtime configuration, external downloaded modules, operator choice or RPC flags to change validation rules for the same chain history.
+
+## 17.2 Distinguish the cryptographic layers
+
+| Layer | Role and quantum-relevant question | Version 2 architectural target |
+|---|---|---|
+| Proof of Work | RandomX/other mining methods determine block work. Quantum speedups and future work algorithms are distinct questions from ownership signatures. | Continue isolated, deterministic PoW strategy adapters and verified activation gates; do not infer PQ wallet safety from RandomX. |
+| Digital signatures | Authorise spending, wallet ownership, coinbase-related spend conditions and, where relevant, staking. Legacy elliptic-curve signatures may become vulnerable to sufficiently capable quantum computation. | Separate key generation, signing, verification, transaction/script policy and wire encoding behind versioned, consensus-safe interfaces. |
+| Addresses and keys | Encode commitments or public keys and affect change, recovery, imported keys, watch-only accounts and historic funds. | Explicitly version new address/key types, preserve read/verify support for legacy types and provide a proven owner-controlled migration path. |
+| Network/session encryption | Protects some P2P, RPC or service communications where encryption or authenticated channels are used. | Inventory separately; evaluate PQ/hybrid key establishment only where encryption is actually required. |
+| Hashes, headers and commitments | Protect block linking, Merkle structures, identifiers and mining-related operations. | Audit independently; do not treat a new digital-signature algorithm as requiring automatic modification of historical hashes. |
+
+**Candidate standards (research inputs, not selected coin consensus rules):** NIST FIPS 204 ML-DSA and FIPS 205 SLH-DSA are post-quantum digital signature standards. NIST FIPS 203 ML-KEM is a *key-encapsulation mechanism*, **not a transaction-signature algorithm**. Compare security, implementation maturity, key/signature size, memory/CPU costs, deterministic verification, side-channel resistance, independent libraries and implementation supply-chain risk. Algorithms and parameters remain **UNSELECTED** for each coin until threat modelling and test evidence exist.
+
+Quantum computing is not a magical defeat of every primitive: public-key signature risks, hash-function security, mining economics and private-channel encryption have different threat models. Increasing mining difficulty alone cannot protect legacy wallet signatures or already-exposed public keys.
+
+## 17.3 Version 2 modular architecture contract
+
+Implement as a *proposed internal interface design* in experimental branches only, preserving existing default behaviour:
+
+1. **Algorithm registry:** stable, uniquely specified algorithm identifiers; fixed protocol encodings; pinned versions/parameter sets; strict length checks; canonical serialisation; bounded parsing and resource limits.
+2. **Verification adapters:** explicit `VerifyLegacySignature` and possible future `VerifySignatureByScheme` routes. Historical validity selects the exact legacy rules appropriate to height, transaction type and context; no mutable global "current algorithm" switch.
+3. **Wallet/signing adapters:** separate signer and verifier implementations, key generation, secure key storage, backups, watch-only mode, hardware-signing possibilities and owner-controlled signing/migration workflows. Wallet opt-in alone must not activate network consensus.
+4. **Transaction and address versioning:** model new outputs, witness/script paths, signatures, fees, replay protection, staking operations and address encoding as explicit consensus changes requiring separate threat review; retain historical replay and legacy address decoding.
+5. **Consensus activation registry:** height/time/defined activation state and peer compatibility as applicable, reproducible across all honest nodes and stable under reorganisation. No local miner, wallet, RPC, node or operator option may change the activation outcome.
+6. **Independent crypto library boundary:** use reviewed, maintainable implementations with known provenance, pinned builds, software bill of materials, fuzzing, test vectors, constant-time/side-channel assessment and rollback plans; never load arbitrary consensus plug-ins or unreviewed code from the network.
+7. **Operational boundaries:** benchmark public-key/signature sizes, block and mempool limits, transaction weight and fees, propagation, disk/DB storage, RPC interfaces, rescan/indexing, treasury, mining and wallet UX. Reject denial-of-service regression or silent consensus divergence.
+
+There can be no universal "drop-in" quantum fix: modifying ownership signatures requires careful changes to transactions, wallet handling, nodes, fee estimation, and sometimes hard-fork/soft-fork activation strategies. Each coin must make its own documented, reviewed consensus decision.
+
+## 17.4 Historic fund ownership and safe migration
+
+- Capture authentic historical mainnet fixtures, chain parameters, address prefixes, key derivation/signing paths, representative scripts, coinbase and stake outputs, restored wallet backups, and UTXO/accounting snapshots **before any changes**.
+- Continue verification of historical transactions exactly as accepted by legacy consensus; do not retroactively reinterpret old scripts, signatures, PoW or reward rules.
+- Audit exposure of public keys and address reuse (when the coin's script/address scheme makes this relevant); do not assume all legacy funds have identical quantum exposure or that a hashed address alone permanently solves the problem.
+- Design an authenticated, voluntary and recoverable path by which a **verified current owner** can move legacy funds to any future new output/signature type, with clear wallet backups and recovery instructions. Independently test imported keys, offline wallets, cold storage, change, watch-only wallets, immature rewards and lost-key edge cases.
+- If a future threat model proposes retirement or restrictions on legacy spend paths, **STOP** and require explicit published analysis of legitimate-owner protection, accessibility, chain compatibility and governance before proposing any activation. Never silently strand or seize funds.
+- Test hybrid/dual-signature approaches only when their precise security properties, verification rules, extra fees/weight and downgrade risks have been specified; "hybrid" is not automatically quantum-safe.
+
+## 17.5 Per-coin design obligations (no cross-coin PASS)
+
+| Coin | Mandatory additional audit or constraint before a Version 2 proposal |
+|---|---|
+| TAO Revival / TaoX | Preserve authentic Scrypt-era and RandomX-transition historical verification, genesis, address and wallet compatibility; never conflate PoW module activation with wallet signature activation. |
+| XNUVA | Preserve its established RandomX/ASERT network, wallet recoverability, restart reliability and existing key material; qualify any new signature path independently of startup/mining fixes. |
+| ERA | Preserve legacy chain, mined outputs and accounting; unresolved independent coinbase/wallet acceptance is a blocker to declaring a new security architecture release-qualified. |
+| ZUS | Audit **both PoW and PoS** cryptographic authorisation (including stake signatures, rewards and wallet/accounting); a PQC design must not inadvertently change either issuance or staking consensus. |
+| HOPE | Preserve historic transactions and the agreed strictly capped monetary policy; independently test wallet and block acceptance, maturity and treasury accounting. |
+
+No coin inherits another coin's PASS. Any existing unresolved operational gate remains unresolved, regardless of success in a future cryptographic adapter experiment.
+
+## 17.6 Proposed rollout sequence and separation of releases
+
+| Stage | Deliverable | Production rule changes? |
+|---|---|---|
+| V2-A — Inventory | Per-coin threat model, cryptographic inventory, historical fixtures, exposed-key risk, reference algorithm candidates, consensus dependencies and performance budget | **No** |
+| V2-B — Inactive architecture | Modular deterministic crypto abstraction, test vectors, build/SBOM reproducibility, exact legacy baseline comparison and no-op path when new scheme disabled | **No** |
+| V2-C — Isolated experiments | Candidate signature/address/transaction format in isolated functional tests, historical replay, wallet migration exercises, fuzzing, negative tests and independent peer simulations | **No** |
+| V2-D — Candidate network proposal | Separate reviewed activation specification, release-note draft, security audit, peer coordination, miner/staker readiness, community notice and reversal/recovery analysis | **Not yet** |
+| V2-E — Later explicit activation | Only if approved and independently qualified through G0–G8 in the intended network and sustained observation; coin-specific, not automatic for all five | **Only after all gates pass** |
+
+**Version 2 readiness** means the code has extensible boundaries and remains compatible with existing network behaviour. It **does not** mean Version 2 is post-quantum secure, nor does it authorise activation of a future algorithm.
+
+## 17.7 Mandatory Version 2 cryptographic-agility checklist
+
+For **each coin**, record `PASS / FAIL / BLOCKED / NOT TESTED / N/A`, exact commit, fixture/hash, environment, independent observer and negative-test evidence for every item:
+
+- [ ] Record all existing signing/verification algorithms, addresses, scripts, stake-specific paths, wallet/key formats and actual network encryption uses.
+- [ ] Write a quantum-era threat model distinguishing exposed public keys, signatures, hashing, PoW, P2P and staking.
+- [ ] Pin authentic genesis/consensus and prove historical replay and state equality against an independent reference.
+- [ ] Demonstrate byte-for-byte or consensus-identical legacy results when the new framework is present but inactive.
+- [ ] Specify immutable scheme IDs, canonical serialisation, activation gates and deterministic rejection of unknown/malformed schemes.
+- [ ] Use independently verified algorithm test vectors, boundary tests, fuzzing and constant-time/side-channel review.
+- [ ] Benchmark signatures, keys, CPU, memory, validation latency, blocks, fees, propagation, wallet backup and recovery sizes.
+- [ ] Prove that old wallet backups, imported keys, prior addresses and historical signatures remain recognised and funds remain accessible.
+- [ ] Test owner-authorised legacy-to-new address migration, new key generation, change handling, rollback and restored wallets in isolation.
+- [ ] Test rejection of invalid proofs, mismatched IDs, invalid signatures, wrong-chain replay, truncated encoding and downgrade attempts.
+- [ ] Evaluate PoW/mining plus all applicable PoS/staking and coinbase maturity interactions without altered supply or reward logic.
+- [ ] Reconcile wallet accounting, matured spendability, explorer and game treasury effects for each affected coin.
+- [ ] Test clean shutdown, restart, rescan/reindex, backup restoration, chain reorganisation and independent node agreement.
+- [ ] Complete supply-chain review, reproducible builds, source provenance, denial-of-service analysis and rollback documentation.
+- [ ] Obtain review of any proposed live consensus activation; prove real-network block acceptance, wallet correctness and 24–48-hour sustained observation under normal release rules **before** marking the release qualified.
+- [ ] Publish explicit risk disclosure, migration guidance, incompatible-client handling and an evidence-linked release decision.
+
+**Explicit failure rule:** an isolated adapter or unit test PASS never upgrades the status of coin consensus, transaction authorisation, funds migration, network readiness or security assurances. STOP on any historical discrepancy, key-loss risk, non-deterministic validation, unauthorised mint/burn, wallet-credit mismatch or uncontrolled activation.
+
+## 17.8 Public references and stewardship
+
+- NIST PQC project and standards: https://csrc.nist.gov/Projects/Post-Quantum-Cryptography
+- FIPS 203 (ML-KEM, key establishment): https://csrc.nist.gov/pubs/fips/203/final
+- FIPS 204 (ML-DSA, signatures): https://csrc.nist.gov/pubs/fips/204/final
+- FIPS 205 (SLH-DSA, signatures): https://csrc.nist.gov/pubs/fips/205/final
+- NIST IR 8547 (October 2026 transition guidance; not a blockchain-consensus specification): https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf
+- IETF RFC 9958, *Post-Quantum Cryptography for Engineers*: https://datatracker.ietf.org/doc/rfc9958/
+
+Maintain evidence-linked proposals, threat-model revisions, test reports and sign-off in GitHub. Future human or AI maintainers are equally bound by independent review and every applicable Golden Standard gate.
+
+**Standing requirement:** *Make future cryptographic upgrades possible through deliberate design. Never sacrifice historical validity or existing ownership to make an upgrade appear easy.*
 
 ## Standing rule: NO PASS without scope. NO RELEASE without evidence. NO LOSS OF HISTORY, KEYS OR FUNDS.
 
-Document ends — v1.16 draft, preserving the earlier baselines. Operational proof must be supplied by
+Document ends — v1.17 draft, preserving the earlier baselines. Operational proof must be supplied by
 live logs and independent nodes; a handbook cannot itself validate a
 running cryptocurrency.
