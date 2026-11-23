@@ -6,6 +6,10 @@ This area defines universal release gates for every coin, miner, wallet, node, a
 
 For beginner-friendly Tor, SOCKS5 proxy and VPN setup, per-coin compatibility warnings, and independent leak-testing requirements, see the [public node privacy guide](NODE_PRIVACY_TOR_SOCKS5.md). **No coin has been declared Tor-qualified merely because its source advertises proxy settings.**
 
+## Mandatory SOCKS5 proxy compatibility for future modernisations
+
+Every modernised node release must pass the [proxy compatibility release gate](MANDATORY_PROXY_COMPATIBILITY_RELEASE_GATE.md): a real SOCKS5 P2P connection, independent peer validation, no silent direct-P2P fallback when the proxy is configured, restart/recovery and evidence-linked sign-off. Tor v3 peer/onion functionality is separately qualified before it can be advertised. **These are future release requirements; current clients have not been independently proxy-qualified.**
+
 ## Project Independence, Decentralisation and Long-Term Survival
 
 The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) sets a 16-point per-coin checklist for reproducible builds, permissionless nodes, monetary integrity, infrastructure independence, successor maintainers and founder-absence testing. It is a **new engineering obligation, not a claim that any coin has already qualified**.
@@ -18,6 +22,7 @@ The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALIS
 - Record evidence for miner/staker rewards, maturity, fees, reorgs and any dependent game treasury.
 - Prove restart and interrupted recovery, independent node operation, 24–48h monitored stability, clean build and rollback.
 - Treat a missing gate or blocked test as a release blocker, including activation planning.
+- Require independent evidence for mandatory SOCKS5 proxy compatibility (PX-01–PX-22) on the exact modernised release-candidate binary.
 
 See the [full v1.16 baseline](../GOLDEN_STANDARD_CRYPTO_MODERNISATION.md) for the exact requirements (especially sections 1–15). Future updates should be maintained in modular documents with clear change history; keep the frozen v1.16 source for provenance.
 
