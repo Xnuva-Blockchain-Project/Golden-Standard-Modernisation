@@ -14,6 +14,19 @@ Every modernised node release must pass the [proxy compatibility release gate](M
 
 The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) sets a 16-point per-coin checklist for reproducible builds, permissionless nodes, monetary integrity, infrastructure independence, successor maintainers and founder-absence testing. It is a **new engineering obligation, not a claim that any coin has already qualified**.
 
+## Autonomous infrastructure recovery and read-only explorers
+
+Added 2026-11-24 following the EZHScan five-chain deployment. Apply these requirements to node-dependent services (explorers, miners, treasury workers and other scheduled integrations) without changing consensus:
+
+- Inventory persistent services, timers and dependencies. Verify boot enablement and runtime state separately; socket activation and timer-triggered oneshot services need not themselves be enabled.
+- Boot ordering is not readiness. Handle temporarily unavailable nodes, renewed authentication credentials, lost encrypted links and downstream service outages with bounded retry/backoff; preserve explicit operator pauses. Classify integrity failures separately and quarantine conflicts rather than weakening checks.
+- Use least-privilege service identities and private authenticated transport. A client RPC allowlist is not equivalent to daemon-side authorization. Keep secrets outside the webroot and repository; immediately rotate exposed credentials and verify rejection of old credentials.
+- Resume from the last committed, verified chain anchor. Never automatically rewind or accept divergent history to recover availability. A standby must independently pass genesis, tip and anchor checks; redundant node sources do not by themselves make the indexing worker redundant.
+- Public read-only services must distinguish indexed data from the live chain, flag stale/incomplete coverage and never label partial address accounting or net issuance as verified balances or circulating supply. A functioning API is not evidence of independent consensus validation.
+- Preserve rollback and protected staging. Require actual controlled restart/reboot, outage recovery, continuity verification and 24–48h monitored stability before full operational sign-off. Boot configuration alone is not recovery qualification.
+
+**EZHScan evidence scope:** initial ingestion from all five networks, public PHP endpoints and persistent startup configuration were operator-reported (P). Actual reboot/outage recovery, sustained stability, complete historical accounting, security closure and standby failover remain open (O). No cryptocurrency release or modernisation gate is satisfied by explorer deployment.
+
 ## Mandatory release gates
 
 - Preserve genesis, historical blocks, balances, signing formats, and wallet recovery.
