@@ -27,6 +27,10 @@ Added 2026-11-24 following the EZHScan five-chain deployment. Apply these requir
 
 **EZHScan evidence scope:** initial ingestion from all five networks, public PHP endpoints and persistent startup configuration were operator-reported (P). Actual reboot/outage recovery, sustained stability, complete historical accounting, security closure and standby failover remain open (O). No cryptocurrency release or modernisation gate is satisfied by explorer deployment.
 
+## Project identity and transparency
+
+See the [project identity and transparency standard](PROJECT_IDENTITY_TRANSPARENCY.md) for canonical blockchain identifiers, public no-coin-sales disclosures and AI research accuracy regression checks. Source-declared identifiers must be distinguished from live-node verification.
+
 ## Mandatory release gates
 
 - Preserve genesis, historical blocks, balances, signing formats, and wallet recovery.
