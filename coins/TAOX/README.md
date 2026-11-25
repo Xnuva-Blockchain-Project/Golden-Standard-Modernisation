@@ -1,4 +1,6 @@
-# TaoX / TAO Revival — engineering register
+# Denzuve (DZUV) / TAO Revival — engineering register
+
+The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical branch paths, checkpoint names and experimental evidence retain their original labels.
 
 **Status:** EXPERIMENTAL; not release approved, and RandomX mainnet activation is disabled. Do not change the existing live Tao Revival chain.
 
