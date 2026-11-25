@@ -4,7 +4,8 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 
 **Status:** EXPERIMENTAL; not release approved, and RandomX mainnet activation is disabled. Do not change the existing live Tao Revival chain.
 
-**Source:** [Tao development branch](https://github.com/Xnuva-Blockchain-Project/Tao/tree/modernisation/taox-consolidated-full-source)
+**Canonical source:** [Denzuve development branch](https://github.com/Xnuva-Blockchain-Project/Denzuve/tree/modernisation/denzuve-transition-release-1) (since K12C, 25 November 2026)
+**Historical source:** [Tao consolidated development branch](https://github.com/Xnuva-Blockchain-Project/Tao/tree/modernisation/taox-consolidated-full-source)
 **Baseline commit:** `3eb33acd901cb28392258c168d87ee0e70261076` (CP25X, 23 November 2026)
 
 ## Chronological development history
@@ -45,7 +46,7 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 | 26DD-K11A | Common 960 × 540 splash renderer implemented following XNUVA design standard. Not yet compiled or visually qualified; final artwork deferred after image generation failure. |
 | 26DD-K11C | 50 files committed and pushed; operator verified local and remote SHA match, clean working tree, protected functional source and existing binary checksums. No production change or mainnet activation. |
 
-**Current development branch:** [modernisation/denzuve-transition-release-1](https://github.com/Xnuva-Blockchain-Project/Tao/tree/modernisation/denzuve-transition-release-1)  
+**Current development branch:** [modernisation/denzuve-transition-release-1](https://github.com/Xnuva-Blockchain-Project/Denzuve/tree/modernisation/denzuve-transition-release-1)  
 **Preserved source commit:** [df98de7b8d23420d37d358cdd5e7bc3fda200821](https://github.com/Xnuva-Blockchain-Project/Tao/commit/df98de7b8d23420d37d358cdd5e7bc3fda200821)  
 **Pre-commit patch SHA-256:** `a7292b1aeecb18e2044b90666d5cca0c8e7f5de84128804a62009920b517ea3d`  
 **Native 20-block test fixture tip:** `5a93a1067a38c3d0462e69d997a3b12b7dc7d1fd90f4bae91b58325900bb3e19`  
@@ -53,7 +54,17 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 
 **Dependency reproducibility blocker:** declared shared foundation pin `857841056ed939eeea4fd640463b54b6a5cd54af` differs from effective local override `546a21488dc3a03588094b4e9bdff6535534bcef`; underlying XNUVA source checkout `853a3171ece198f60b5125a16dca83d68a8f53c3`. Reconcile committed pins, remote availability and clean-build qualification before release.
 
-**Next gates:** remaining user-facing branding and packaging, functional test harness adaptation and historical binary isolation, splash artwork and visual/high-DPI qualification, reproducible dependency pins, dedicated Denzuve repository transfer preserving history, full core and adverse-condition regression, historical chain and legacy wallet continuity, independent peer acceptance, proxy tests, restart/recovery, sustained operation and rollback. Mainnet RandomX activation remains -1; regtest activation 2, epoch length 16. No public release authorised.
+**Next gates:** remaining user-facing branding and packaging, functional test harness adaptation and historical binary isolation, splash artwork and visual/high-DPI qualification, reproducible dependency pins, full core and adverse-condition regression, historical chain and legacy wallet continuity, independent peer acceptance, proxy tests, restart/recovery, sustained operation and rollback. Mainnet RandomX activation remains -1; regtest activation 2, epoch length 16. No public release authorised.
+
+## 25 November 2026 — Independent repository consolidation (K12–K12C)
+
+**Evidence status: P (operator-reported scoped PASS).** The new public [Denzuve repository](https://github.com/Xnuva-Blockchain-Project/Denzuve) is the canonical development destination. Both main and the transition development branch were populated at [734b201f022c86a445858f065048f337073f13f8](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/734b201f022c86a445858f065048f337073f13f8). Main is an experimental baseline, not an approved release.
+
+- K12: independent project README committed; initial push rejected because of missing ancestral object.
+- K12A/B: shallow clone identified and unshallowed from Tao; missing commit recovered, Git integrity checks passed; 167 reachable commits and 4,794 objects transferred without history rewriting. Unreachable dangling blobs reported, not integrity failures.
+- K12C: local origin switched to Denzuve; tao-legacy retained for historical access. Both remote branch SHAs matched, working tree clean, all ten existing executable checksums matched, modernised source unchanged from K11C apart from repository documentation.
+- Complete history bundle SHA-256: `5bb8ed907c6e7df39d92c398de9fa61690fcd7f7dd86a6a3d350449d9a3fbc30` (operator-local backup, not uploaded). Historical Tao development branch remains at K11C; no obsolete branch or tag mirroring, deletion or force push.
+- No production deployment, mainnet activation, release tag or approved release. All remaining software and release qualification gates still apply. Local working directory and build paths retained for compatibility.
 
 ## Completed / outstanding tests
 
