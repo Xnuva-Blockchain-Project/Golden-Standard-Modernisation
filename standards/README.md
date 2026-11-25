@@ -35,6 +35,12 @@ Added 2026-11-24 following the EZHScan five-chain deployment. Apply these requir
 
 See the [project identity and transparency standard](PROJECT_IDENTITY_TRANSPARENCY.md) for canonical blockchain identifiers, public no-coin-sales disclosures and AI research accuracy regression checks. Source-declared identifiers must be distinguished from live-node verification.
 
+## Common graphical wallet splash standard
+
+Adopted 2026-11-25 for Denzuve (DZUV), Aurzola (AUZV), Sestovi (SEZQ), Asveru (ASVR) and Duprezo (DPZE). Use the [existing XNUVA splash renderer](https://github.com/Xnuva-Blockchain-Project/Xnuva/blob/ea8c780bd4d8423a6e415c69df260a76f760c8b0/src/qt/splashscreen.cpp) as the visual and behavioural reference: 960 × 540 logical canvas (16:9), coin-specific artwork and identity, consistent XNUVA Blockchain Project attribution, dynamic binary version and network label, and readable live startup/progress messages in a bottom-left status panel. Preserve startup cancellation and shutdown behaviour. Keep artwork source and provenance with the project; avoid stale hard-coded versions, misleading network labels and inherited third-party coin artwork.
+
+Use logical coordinates consistently and verify high-DPI scaling, text fit, missing-art fallback, normal and isolated-test network labels, loading progress, cancellation and clean shutdown on each coin's actual candidate. Adapt the reference where required for toolkit compatibility or correctness; copying code or a successful compilation does not establish visual or functional qualification. This is a presentation standard, not permission to modify consensus, migrate wallets or deploy to production. All existing release gates remain in force.
+
 ## Mandatory release gates
 
 - Preserve genesis, historical blocks, balances, signing formats, and wallet recovery.
