@@ -4,7 +4,9 @@ The following table is **copied from the GSH v1.16 section 16.11.1**. It records
 
 **Status notation:** P = checkpoint-reported scoped PASS (review of underlying artefacts outstanding), V = independently verified and reviewed, O = open/not qualified, B = blocked/failed, N/A = independently justified and approved. Do not mark a test V solely from a conversation or copied log. Never transplant a pass from one coin to another.
 
-## TAOX baseline — performed vs outstanding
+## Denzuve — historical TAOX baseline, performed vs outstanding
+
+TAOX is the historical experimental label; the selected future public name is Denzuve (DZUV). Evidence below is preserved verbatim.
 
 | ID | Mandatory test / assertion | TAOX status | Test evidence / exact boundary |
 |---|---|---|---|
