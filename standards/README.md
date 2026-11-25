@@ -51,6 +51,19 @@ The Denzuve foundation is experimental: 11 foundation checks reported PASS, 100 
 
 Complete the rebrand before the final registered regression run; repeat all relevant component and application tests on the exact candidate, including previously passing tests. No release or mainnet activation before all existing gates are satisfied.
 
+## Historical cryptographic identity and inherited regression adaptation
+
+Added 2026-11-25 following Denzuve K19A–K19C. Mandatory for each coin's transition; evidence from Denzuve is not transferable qualification.
+
+- Inventory historical signed-message domains, serialization, address and WIF prefixes, compression flags and wallet formats from preserved legacy source and binaries. Presentation rebranding must not change these protocol constants. Independently verify message hashes, compact signatures and recovered public keys; test wrong-domain and altered-message rejection and actual legacy executable interoperability. Never infer historical identity from upstream branding.
+- Qualify independent reference implementations against established vectors before adapting fixtures. Preserve private scalars, public-key hashes, scripts and compression flags; use only public synthetic keys in published fixtures. Test cryptographic provider availability against known digest vectors without changing global machine configuration.
+- Preserve negative parser semantics: a foreign prefix must not mask an intended threshold, whitespace, script-size, nesting or checksum rejection. Preserve valid and deliberately invalid checksum distinctions and independently check script payloads, Merkle roots and control blocks. Review serialization and error selection at runtime.
+- Separate supported-network address policy from generic script recognition and consensus activation. Retain inherited vectors and explicitly account for unsupported networks/features; verify native-prefix rejection where appropriate. Do not enable witness, snapshot or other features merely to satisfy upstream tests. Preserve raw cryptographic coverage.
+- Derive test fixtures from native subsidy, maturity, difficulty and contextual proof-of-work rules. Preserve production block-creation guards, historical chain ancestry and RandomX seed selection. Never substitute block identifier hashes for contextual proof-of-work hashes, lower chainwork requirements or suppress failures merely to obtain green tests.
+- Recover complete failure logs and classify root causes before patching. Preserve exact diffs, dependency pins, original executable hashes and recovery manifests. Separate source preparation from executed regression evidence. Repeat all registered tests and relevant component/adversarial checks on the final exact candidate. Record exclusions and unresolved failures; no release or activation while gates remain open.
+
+Denzuve evidence (P): historical TaoCoin message domain differed from inherited Bitcoin domain; independently reproduced the inherited compact signature, generated a historical-domain vector and verified cross-domain discrimination. The source restoration and fixture corrections remain uncompiled. Historical binary interoperability, runtime parser behavior and all other release gates remain open. Original compiled candidate: 131 PASS / 25 FAIL / 1 SKIPPED of 157 registrations.
+
 ## Mandatory release gates
 
 - Preserve genesis, historical blocks, balances, signing formats, and wallet recovery.
