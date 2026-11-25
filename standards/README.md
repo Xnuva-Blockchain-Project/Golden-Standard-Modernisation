@@ -41,6 +41,16 @@ Adopted 2026-11-25 for Denzuve (DZUV), Aurzola (AUZV), Sestovi (SEZQ), Asveru (A
 
 Use logical coordinates consistently and verify high-DPI scaling, text fit, missing-art fallback, normal and isolated-test network labels, loading progress, cancellation and clean shutdown on each coin's actual candidate. Adapt the reference where required for toolkit compatibility or correctness; copying code or a successful compilation does not establish visual or functional qualification. This is a presentation standard, not permission to modify consensus, migrate wallets or deploy to production. All existing release gates remain in force.
 
+## Modular localisation and branding preservation
+
+Adopted 2026-11-25. Maintain reusable localisation infrastructure in the independent [Localisation repository](https://github.com/Xnuva-Blockchain-Project/Localisation), with common language catalogues, coin-owned presentation identity and coin-specific extensions. Pin reviewed module versions for independent reproducible offline builds. Retain Qt TS/QM compatibility, inherited attribution, contexts, disambiguation, placeholders and language-specific plural forms. Reject conflicting keys and unreviewed translations; use correctly branded English fallback. Never perform blind runtime substitution. Identity metadata is presentation-only and must not control consensus, monetary arithmetic, wallet serialization, network ports or payment URI handling.
+
+Use Princeps (singular) and Principes (plural) for the smallest denomination across the five future branded clients, without altering denomination arithmetic or issuance. Preserve historical identifiers and legitimate upstream attribution. Separate branding commits from functional changes, and retain verified local and remote recovery points.
+
+The Denzuve foundation is experimental: 11 foundation checks reported PASS, 100 inherited catalogues retained, 15 changed GUI keys mapped with 804 old-key matches and zero reported collisions. The generator, migration, schema and catalogue validation, Qt integration and runtime localisation qualification remain open. The standalone repository exists but is not yet populated or qualified. Do not treat shared-module results as per-coin release qualification.
+
+Complete the rebrand before the final registered regression run; repeat all relevant component and application tests on the exact candidate, including previously passing tests. No release or mainnet activation before all existing gates are satisfied.
+
 ## Mandatory release gates
 
 - Preserve genesis, historical blocks, balances, signing formats, and wallet recovery.
