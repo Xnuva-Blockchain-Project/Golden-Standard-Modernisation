@@ -104,6 +104,16 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 
 **Next priority:** resume substantive cryptocurrency qualification; preserve evidence and use the shared architecture for other coins only after individual qualification.
 
+## 25 November 2026 — Full regression diagnosis and source correction preservation (K18–K19C)
+
+**Evidence status P; release HOLD.** K18 clean rebranded laboratory candidate compiled; 157 registered tests executed/accounted for, 131 PASS (including three RandomX registrations), 25 FAIL, 1 SKIPPED (external script assets). K19A–K19B source preparation: 16 modified files, 379 insertions, 124 deletions; 15 test files and one application file (historical signed-message domain restoration). Independent Base58Check, descriptor checksum, compact signature and Bech32 references qualified on public synthetic vectors; 199 inventoried descriptor conversions, all 140 inherited address entries retained, eight native witness vectors and 24 rejection assertions prepared, seven BIP341/BIP350 address-to-script relationships verified. Shared 100-block fixture and CLI/snapshot safety corrections prepared. No new runtime passes claimed. Historical TaoCoin signing domain restored at source level; actual legacy executable interoperability remains open.
+
+K19C read-only audit recovered four failure logs (miner, peerman, headers sync chainwork, validation block) and preserved 22 source files with upstream comparisons. No additional source edits. Original candidate binaries and pinned dependencies reported unchanged. Operator-local evidence: `~/taox-checkpoint-backups/26DD-K19C-gytrwFZK/mining-header-audit.sha256`, K19B-R10 script-address qualification and K18E complete-batch evidence. These are pointers, not uploaded artifacts.
+
+**Source publication:** parent development commit b382e590d8a5043cbe8342c99dc05331961f5a96; end-of-day local commit/push requested, remote SHA not yet confirmed. Main remains intended unchanged. Resume K19C-R1 after confirming publication; distinguish inherited mining assumptions from actual contextual PoW defects. Then K19D networking, K19E snapshot/activation, K19F assets/residual failures, K20 combined compilation and full regression. All historical replay, wallet migration, independent peer/proxy, sustained operation and rollback gates remain open. No mainnet activation or release approved.
+
+See [historical cryptographic identity and inherited regression adaptation](../../standards/README.md#historical-cryptographic-identity-and-inherited-regression-adaptation).
+
 ## Completed / outstanding tests
 
 See [the 35-item RandomX register](../../randomx/checklist.md). It distinguishes reported PASS from O / blocked. The major remaining gates are real adversarial P2P presync/redownload; future-block propagation; wallet changes and reorg cases; full historic Tao chain and UTXO/wallet equivalence; clean release builds, 24–48h soak, rollback and independent review.
