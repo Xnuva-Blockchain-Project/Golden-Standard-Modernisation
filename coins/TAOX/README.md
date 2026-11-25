@@ -78,9 +78,31 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 | K17E–F | 100 inherited TS catalogues retained; 15 GUI source keys mapped, 804 old matches, zero collisions. Eight localisation foundation files created; 11/11 foundation checks reported PASS. Generator, catalogue migration and Qt integration outstanding. |
 | K17F1–F2 | Both application and localisation commits published; operator reported matching local and remote SHA, clean working tree, unchanged protected source and artwork checksums. |
 
-**Latest preserved development commit:** [032c97bc35ac8bb42fdfb05b7a48e9c2c5443bfa](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/032c97bc35ac8bb42fdfb05b7a48e9c2c5443bfa). The earlier dependency override blocker was addressed in the reported K15 laboratory; repeat clean dependency resolution on the final candidate. The independent [Localisation repository](https://github.com/Xnuva-Blockchain-Project/Localisation) exists but transfer and integration remain pending. See [shared localisation standard](../../standards/README.md#modular-localisation-and-branding-preservation).
+**Earlier preserved development commit (K17F2):** [032c97bc35ac8bb42fdfb05b7a48e9c2c5443bfa](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/032c97bc35ac8bb42fdfb05b7a48e9c2c5443bfa). The earlier dependency override blocker was addressed in the reported K15 laboratory; repeat clean dependency resolution on the final candidate. The independent [Localisation repository](https://github.com/Xnuva-Blockchain-Project/Localisation) was awaiting transfer and integration at that checkpoint; see the subsequent milestone below. See [shared localisation standard](../../standards/README.md#modular-localisation-and-branding-preservation).
 
 **Next gates:** complete localisation, remaining compatibility references, packaging, documentation and branding audit; clean build and visual verification; full registered 157-test suite (plus outstanding component and additional release gates), historical replay, legacy wallet migration, independent peer and cross-machine acceptance, proxy qualification, sustained operation and rollback. Mainnet RandomX activation remains -1 (epoch 0); isolated regtest activation 2 (epoch 16). No production deployment, release or activation authorised.
+
+## 25 November 2026 — Shared Localisation integration (K17I–K17J-F13)
+
+**Evidence status: P (operator-reported scoped PASS); release HOLD.**
+
+**Current authoritative development source:** [b382e590d8a5043cbe8342c99dc05331961f5a96](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/b382e590d8a5043cbe8342c99dc05331961f5a96). Development branch only; main remains at 734b201f022c86a445858f065048f337073f13f8.
+
+| Checkpoints | Recorded scope |
+|---|---|
+| K17I–K17J-E3 | Immutable catalogue archive, portable identity templates, active source filtering, deterministic CMake resources and integrated graphical wallet. |
+| K17J-F1–F3 | Isolated graphical regtest startup/shutdown, explicit inherited-resource rollback build, incompatible input failure and recovery. |
+| K17J-F4–F8 | Formatting and branding review; 69 provisional corrections, 65,791 unrelated messages preserved, 117 native comparisons, 66 module tests, 100 deterministic QM catalogues. Independent module published. |
+| K17J-F9–F11 | Exact dependency pin, incremental wallet compilation, 14 language help smoke tests, all 100 embedded catalogues byte-verified (8,977,647 bytes), 117 embedded native comparisons. |
+| K17J-F12–F13 | Three exact source trees preserved as commits, clean working tree and remote development SHA verified. Recovery artifacts protected. |
+
+**Published commits:** b90d7fa17343da1ac7935693c46fc34dee0e5427 (presentation), e21e426258e6c84623a62857fd87f6414c27e6f6 (dependency), b382e590d8a5043cbe8342c99dc05331961f5a96 (integration).
+
+**Pinned Localisation:** [73233b44e093f07a3a43dded29f9fc06cc71d6a2](https://github.com/Xnuva-Blockchain-Project/Localisation/commit/73233b44e093f07a3a43dded29f9fc06cc71d6a2). Corrected generated resource SHA-256: `8d414ac501804b82260c87946b7ca97dd839431e763c6b60c5efc80eea432a99`. Operator-local evidence: `~/taox-checkpoint-backups/26DD-K17JF13-Tc9yae5m/denzuve-publication.sha256`, F10 corrected-wallet qualification and F11 embedded qualification manifests. Evidence not uploaded here. The tested wallet predates the three publication commits and reports the earlier dirty version; rebuild final candidate.
+
+**Outstanding release gates (O):** complete source inventory regeneration, compatible source-content regeneration, regional translator precedence, actual core printf formatting path, broader linguistic/security warning review including known Basque RPC console formatting, application/network version reconciliation, final wallet functionality, all 157 registered cryptocurrency tests on rebranded candidate, outstanding component tests, historical chain compatibility, legacy wallet migration/recovery, independent peers/cross-machine operation, proxy qualification, sustained operation and rollback readiness. Small-window clipping and disabled-network wording remain deferred cosmetic work. Provisional translations are not native-speaker certified. No public test release, production deployment or mainnet activation authorised.
+
+**Next priority:** resume substantive cryptocurrency qualification; preserve evidence and use the shared architecture for other coins only after individual qualification.
 
 ## Completed / outstanding tests
 
