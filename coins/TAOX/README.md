@@ -29,7 +29,31 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 | CP25W local qualification report | SHA-256 `a6ddc061be0481896719b113a3115a547d8a8739ba8def9047f2cdcc73aecd47` | Local-only report, not uploaded to this public repository |
 | Historical block 34 tip | `194b97ca6382447b00dc5cbee88f36675adcfdc5132bdb0b80c4c50e6f1b558e` | Regtest reference |
 
-**Operator-local report:** `~/taox-release-qualification/taox-cp25w-20261123T143729Z.txt`. This path is a pointer, not an uploaded evidence bundle. The three uncommitted wallet source files (`addresses.cpp`, `spend.cpp`, `wallet.h`) are intentionally not in the pushed commit.
+**Operator-local report:** `~/taox-release-qualification/taox-cp25w-20261123T143729Z.txt`. This path is a pointer, not an uploaded evidence bundle. At CP25X, the three wallet source files (`addresses.cpp`, `spend.cpp`, `wallet.h`) were intentionally excluded from that historical commit. Subsequent functional integration was preserved separately in the 25 November baseline below.
+
+## 25 November 2026 — Denzuve development preservation
+
+**Evidence status: P (operator-reported scoped results); release HOLD.**
+
+| Checkpoints | Milestone / scope |
+|---|---|
+| 26DD-B–H | Isolated regtest mining, two local peers, maturity and payment, RandomX seed transition, wallet backup/restore and three registered RandomX tests reported PASS. Same physical host; wider adversarial and historical compatibility tests remain open. |
+| 26DD-K1C | Functional integration preserved at [2c8e64f](https://github.com/Xnuva-Blockchain-Project/Tao/commit/2c8e64fc0aac35055f9f0a17f1a48404596e0a0e). |
+| 26DD-K2–K9B | Branded executables, DZUV / Princeps display, config and storage separation, payment URI changes and isolated GUI-enabled compilation. Seven application binaries recorded. |
+| 26DD-K10B | Fresh regtest daemon and RPC dispatcher, Denzuve subversion, default data directory, DZUV fee label, amount regression and clean shutdown reported PASS. Networking disabled; not independent network acceptance. |
+| 26DD-K10C–K10G | Native test clock, genesis transaction, contextual Scrypt/RandomX mining, 20-block maturity and P2PKH address fixtures corrected; all six Qt test groups passed (21 Qt results including setup/cleanup, zero failures, 152.95 seconds). Fixed deterministic test-tip assertion restored and reproduced. |
+| 26DD-K11A | Common 960 × 540 splash renderer implemented following XNUVA design standard. Not yet compiled or visually qualified; final artwork deferred after image generation failure. |
+| 26DD-K11C | 50 files committed and pushed; operator verified local and remote SHA match, clean working tree, protected functional source and existing binary checksums. No production change or mainnet activation. |
+
+**Current development branch:** [modernisation/denzuve-transition-release-1](https://github.com/Xnuva-Blockchain-Project/Tao/tree/modernisation/denzuve-transition-release-1)  
+**Preserved source commit:** [df98de7b8d23420d37d358cdd5e7bc3fda200821](https://github.com/Xnuva-Blockchain-Project/Tao/commit/df98de7b8d23420d37d358cdd5e7bc3fda200821)  
+**Pre-commit patch SHA-256:** `a7292b1aeecb18e2044b90666d5cca0c8e7f5de84128804a62009920b517ea3d`  
+**Native 20-block test fixture tip:** `5a93a1067a38c3d0462e69d997a3b12b7dc7d1fd90f4bae91b58325900bb3e19`  
+**Evidence pointers (operator-local, not uploaded):** K9B application binary manifest; K10G GUI test binary manifest and regression log; K11C pre-commit patch. Exact binary digests are not reproduced here. The GUI tests preceded the splash renderer changes: the final committed source has not undergone a clean build or full qualification.
+
+**Dependency reproducibility blocker:** declared shared foundation pin `857841056ed939eeea4fd640463b54b6a5cd54af` differs from effective local override `546a21488dc3a03588094b4e9bdff6535534bcef`; underlying XNUVA source checkout `853a3171ece198f60b5125a16dca83d68a8f53c3`. Reconcile committed pins, remote availability and clean-build qualification before release.
+
+**Next gates:** remaining user-facing branding and packaging, functional test harness adaptation and historical binary isolation, splash artwork and visual/high-DPI qualification, reproducible dependency pins, dedicated Denzuve repository transfer preserving history, full core and adverse-condition regression, historical chain and legacy wallet continuity, independent peer acceptance, proxy tests, restart/recovery, sustained operation and rollback. Mainnet RandomX activation remains -1; regtest activation 2, epoch length 16. No public release authorised.
 
 ## Completed / outstanding tests
 
