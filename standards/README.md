@@ -14,6 +14,10 @@ Every modernised node release must pass the [proxy compatibility release gate](M
 
 The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) sets a 16-point per-coin checklist for reproducible builds, permissionless nodes, monetary integrity, infrastructure independence, successor maintainers and founder-absence testing. It is a **new engineering obligation, not a claim that any coin has already qualified**.
 
+## Independent software development and release ownership
+
+Adopted 2026-11-25: after each qualified transition, maintain independent project code, versioning and releases, with selective upstream security backports rather than routine Bitcoin Core rebases. See [GS-LS-001, section 6](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md#6-independent-software-evolution-and-release-ownership). Existing release gates, chain continuity and transition scope remain unchanged.
+
 ## Autonomous infrastructure recovery and read-only explorers
 
 Added 2026-11-24 following the EZHScan five-chain deployment. Apply these requirements to node-dependent services (explorers, miners, treasury workers and other scheduled integrations) without changing consensus:
