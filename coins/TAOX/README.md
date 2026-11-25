@@ -66,6 +66,22 @@ The earlier TaoX/TOAX branding is superseded as of 25 November 2026. Historical 
 - Complete history bundle SHA-256: `5bb8ed907c6e7df39d92c398de9fa61690fcd7f7dd86a6a3d350449d9a3fbc30` (operator-local backup, not uploaded). Historical Tao development branch remains at K11C; no obsolete branch or tag mirroring, deletion or force push.
 - No production deployment, mainnet activation, release tag or approved release. All remaining software and release qualification gates still apply. Local working directory and build paths retained for compatibility.
 
+## 25 November 2026 — Dependency, graphical and localisation preservation (K15–K17F2)
+
+**Evidence status: P (operator-reported scoped results); release HOLD.**
+
+| Checkpoints | Milestone |
+|---|---|
+| K15A–E | Fresh dependency build reported with foundation pin `546a21488dc3a03588094b4e9bdff6535534bcef` and engine pin `853a3171ece198f60b5125a16dca83d68a8f53c3`, no local overrides; foundation 3/3, engine 107/107 and adapter selftest/wrong-seed discrimination reported PASS. This is component evidence, not node-level wrong-seed rejection or final reproducibility qualification. Seven application executables built before final rebranding. Preserved at [2420d10](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/2420d10e17d6df77bba932ba7c6f5ae3bfcb8931). |
+| K16A–I | Graphical source integration, 11 modified files and 11 new assets, published at [278f800](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/278f8004128349fdaeb47486d9dc2d7a228b2d4b). Runtime, high-DPI and platform packaging qualification outstanding. |
+| K17A–D | GUI, RPC and CLI presentation changes and four test message assertions reconciled; test logic preserved by reported AST comparison. Published at [d1c118f](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/d1c118ffe678092609605a69c7c293d91e4ee452). Functional tests not executed. |
+| K17E–F | 100 inherited TS catalogues retained; 15 GUI source keys mapped, 804 old matches, zero collisions. Eight localisation foundation files created; 11/11 foundation checks reported PASS. Generator, catalogue migration and Qt integration outstanding. |
+| K17F1–F2 | Both application and localisation commits published; operator reported matching local and remote SHA, clean working tree, unchanged protected source and artwork checksums. |
+
+**Latest preserved development commit:** [032c97bc35ac8bb42fdfb05b7a48e9c2c5443bfa](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/032c97bc35ac8bb42fdfb05b7a48e9c2c5443bfa). The earlier dependency override blocker was addressed in the reported K15 laboratory; repeat clean dependency resolution on the final candidate. The independent [Localisation repository](https://github.com/Xnuva-Blockchain-Project/Localisation) exists but transfer and integration remain pending. See [shared localisation standard](../../standards/README.md#modular-localisation-and-branding-preservation).
+
+**Next gates:** complete localisation, remaining compatibility references, packaging, documentation and branding audit; clean build and visual verification; full registered 157-test suite (plus outstanding component and additional release gates), historical replay, legacy wallet migration, independent peer and cross-machine acceptance, proxy qualification, sustained operation and rollback. Mainnet RandomX activation remains -1 (epoch 0); isolated regtest activation 2 (epoch 16). No production deployment, release or activation authorised.
+
 ## Completed / outstanding tests
 
 See [the 35-item RandomX register](../../randomx/checklist.md). It distinguishes reported PASS from O / blocked. The major remaining gates are real adversarial P2P presync/redownload; future-block propagation; wallet changes and reorg cases; full historic Tao chain and UTXO/wallet equivalence; clean release builds, 24–48h soak, rollback and independent review.
