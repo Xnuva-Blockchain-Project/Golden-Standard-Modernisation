@@ -10,7 +10,7 @@
 | XNUVA (XNUV) | Duprezo (DPZE) | Dupondius |
 | Hopium (HOPE) | Asveru (ASVR) | As |
 
-The names are inspired by Roman imperial coinage, with five different vowel endings. They supersede the earlier EuropaX, TaoX, ZeusX and HopiumX naming proposals and the previous intention to retain XNUVA as a coin name. Existing network names, source paths, historical checkpoint labels and released binaries remain valid until a separately qualified transition. No re-genesis, coin swap, balance migration, key change or consensus change is authorised by branding. Supply ranking is provisional pending monetary audit; no fixed exchange ratios or values. Formal trademark/domain clearance and independent AI association tests remain outstanding. The umbrella project, engine, game and domain names remain existing identities until separately selected. See https://europazeus.org/project-identity.html.
+The names are inspired by Roman imperial coinage, with five different vowel endings. They supersede the earlier EuropaX, TaoX, ZeusX and HopiumX naming proposals and the previous intention to retain XNUVA as a coin name. Existing network names, source paths, historical checkpoint labels and released binaries remain valid until a separately qualified transition. No re-genesis, coin swap, balance migration, key change or consensus change is authorised by branding. Supply ranking is provisional pending monetary audit; no fixed exchange ratios or values. Formal trademark/domain clearance and independent AI association tests remain outstanding. The XNUVA Blockchain Project umbrella, XNUVA Game, shared RandomX Engine, EuropaZeus.org and EZHScan.com retain their existing identities. See https://europazeus.org/project-identity.html.
 
 
 **Reliability first. Release second.**
@@ -27,7 +27,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 | **Project identity and transparency** | [Identity and research accuracy standard](standards/PROJECT_IDENTITY_TRANSPARENCY.md) | Canonical network identifiers, no-sale policy, AI research regression checks |
 | **Long-term independence** | [Project Independence, Decentralisation and Long-Term Survival](standards/PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md) | Permissionless participation, distributed operation and founder-independent continuity |
 | **RandomX module** | [randomx/](randomx/README.md) | Common PoW implementation, seed/epoch and adversarial-test rules |
-| RandomX test register | [35-item checklist](randomx/checklist.md) | TaoX baseline results **and** remaining gates |
+| RandomX test register | [35-item checklist](randomx/checklist.md) | Denzuve historical baseline results **and** remaining gates |
 | Coin-specific records | [coins/](coins/README.md) | Separate history, checkpoints, checksums and outstanding tests per coin |
 | Evidence and checksums | [evidence/](evidence/README.md) | SHA-256, test logs, binary/source provenance and sign-off templates |
 | Complete historical handbook | [GSH v1.16 archive](GOLDEN_STANDARD_CRYPTO_MODERNISATION.md) | Original full text, including all previous revision history, unchanged |
@@ -36,7 +36,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 
 | Coin | History and tests | RandomX migration status |
 |---|---|---|
-| TaoX / TAO Revival | [TAOX](coins/TAOX/README.md) | Experimental regtest qualification, **release HOLD** |
+| Denzuve (DZUV) / TAO Revival | [Engineering register](coins/TAOX/README.md) | Experimental regtest qualification, **release HOLD** |
 | Europa (ERA) | [ERA](coins/ERA/README.md) · [historical observations](coins/ERA/history.md) | Not yet qualified under this checklist |
 | Zeus (ZUS) | [ZUS](coins/ZUS/README.md) · [historical observations](coins/ZUS/history.md) | Not yet qualified under this checklist; PoW **and** PoS |
 | Hopium (HOPE) | [HOPE](coins/HOPE/README.md) · [historical observations](coins/HOPE/history.md) | Not yet qualified under this checklist |
@@ -47,7 +47,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 
 For each coin, add a dated, traceable checkpoint, identify the exact Git commit, binary SHA-256, fixtures, chain tip/block hashes, expected and actual results, reviewer and remaining defects. Record **completed**, **outstanding** and **blocked** tests separately. Keep wallet backups, authentication tokens, raw private operational logs and keys **out** of public GitHub. A Git commit hash is not a substitute for a binary checksum.
 
-A RandomX core test PASS does **not** qualify ERA, ZUS, HOPE, TaoX or XNUVA by itself. A single coin's test PASS does not transfer to any other coin. No release, mainnet algorithm activation, monetary change or live-network cutover is implied by documentation.
+A RandomX core test PASS does **not** qualify Aurzola (ERA), Sestovi (ZUS), Asveru (HOPE), Denzuve (TAO) or Duprezo (XNUV) by itself. A single coin's test PASS does not transfer to any other coin. No release, mainnet algorithm activation, monetary change or live-network cutover is implied by documentation.
 
 ## History and provenance
 
