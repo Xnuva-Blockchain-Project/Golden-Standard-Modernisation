@@ -83,4 +83,30 @@ This standard is intended to help future maintainers continue the project when i
 
 **Standing rule:** *No single person should be indispensable to the survival of a genuinely decentralised cryptocurrency.*
 
+## 6. Independent software evolution and release ownership
+
+**Adopted:** 25 November 2026  
+**Status:** Standing engineering policy; implementation and qualification remain open.
+
+The modernised upstream foundation is a starting point, not a permanent release roadmap. Following each cryptocurrency's qualified transition release, the XNUVA Blockchain Project will maintain its own software lineage, architecture, roadmap and release cycle rather than routinely replacing or rebasing its codebase onto successive Bitcoin Core releases.
+
+This policy applies to Denzuve (DZUV; TAO Revival), Aurzola (AUZV; Europa), Sestovi (SEZQ; Zeus), Asveru (ASVR; Hopium) and Duprezo (DPZE; XNUVA) as their respective modernisations mature. AMLToken Revival remains subject to its existing stasis mandate.
+
+1. **Own the release lifecycle.** Maintain project-controlled source repositories, review processes, release branches, changelogs, tags and independent version numbering. Adopt a documented major/minor/patch convention appropriate to each coin. Software version numbers do not themselves activate consensus changes. Preserve historical Git ancestry, upstream copyright notices, licences and attribution.
+2. **Follow an independent roadmap.** Develop features and architectural improvements according to each network's requirements, not merely because an upstream release introduces them. Prefer small, auditable changes over wholesale source replacement; divergence must have a documented engineering purpose.
+3. **Remain security-conscious upstream consumers.** Monitor Bitcoin Core and relevant dependency security advisories, fixes and support lifecycles. Assess applicability promptly, selectively backport or adapt relevant patches, record upstream commit provenance and review interactions with local consensus and wallet behaviour. Document justified non-applicability, deferrals and mitigations. Independence must not mean isolation or abandonment of security maintenance.
+4. **Share reusable technology deliberately.** Maintain the XNUVA RandomX Engine as a versioned common module. Extract additional shared components only when their interfaces, compatibility and tests justify it. Pin exact dependency revisions, document source overrides and reconcile them with committed build definitions before release. A shared-module PASS never substitutes for per-coin qualification.
+5. **Protect existing networks and holders.** Retain legitimate genesis, historical blocks, balances, signing formats, spendability and existing monetary/consensus rules unless a separately reviewed, expressly authorised forward activation is required. Never reset a chain or force a coin swap merely to introduce new software or branding.
+6. **Qualify every independent release.** Apply all existing GSH gates to the exact candidate: clean reproducible build, source and binary provenance, historical validation, applicable adversarial and consensus tests, independent P2P acceptance, wallet restoration and spendability, rewards and treasury integration where applicable, proxy qualification, restart/recovery, monitored stability and rollback. Publish outstanding blockers honestly.
+
+### Transition boundary
+
+Denzuve Transition Release 1 is the initial practical milestone for this direction. Its current modernisation baseline is derived from Bitcoin Core 31.1; the objective is to establish a qualified, independently maintainable foundation first. Do not expand the current transition scope merely to increase divergence. The proposed independent versioning sequence (for example 1.0.0, 1.0.1, 1.1.0, 2.0.0) is illustrative until the actual release version is approved and recorded. No public release, new dependency pin, mainnet activation or production deployment is authorised by this policy.
+
+### Ongoing maintenance evidence
+
+For each independent release, record the project version and tag, source ancestry and exact commit, pinned dependencies and build flags, upstream security review and selected patch provenance, local modifications and compatibility impact, candidate checksums, per-coin GSH test outcomes, unresolved defects, rollback instructions and release sign-off. All implementation and qualification claims remain subject to the existing P/V/O/B/N/A evidence rules.
+
+**Standing rule:** Build on upstream knowledge, maintain our own software, and release only what we can independently verify.
+
 **Evidence policy:** This standard adds obligations and tests; it does **not** certify any project or authorise deployment, monetary-policy change, consensus fork, new coin issuance or production cutover. All existing GSH reliability/release gates remain applicable.
