@@ -4,7 +4,7 @@ Each coin has a **dedicated home** for chronology, testing, hashes and outstandi
 
 | Coin | Engineering record | Distinguishing requirements |
 |---|---|---|
-| TAOX / TAO Revival | [TAOX](TAOX/README.md) | Historic Scrypt chain, experimental gated RandomX |
+| Denzuve (DZUV) / TAO Revival | [Engineering register](TAOX/README.md) | Historic Scrypt chain, experimental gated RandomX |
 | Europa (ERA) | [ERA](ERA/README.md) | Preserve historical monetary schedule; ALCE is only a proposal |
 | Zeus (ZUS) | [ZUS](ZUS/README.md) | Both Proof of Work **and** Proof of Stake; aggregate reward accounting |
 | Hopium (HOPE) | [HOPE](HOPE/README.md) | Prospective capped-supply safeguards, no retrospective changes |
