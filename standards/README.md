@@ -18,6 +18,10 @@ The permanent [long-term independence standard](PROJECT_INDEPENDENCE_DECENTRALIS
 
 Adopted 2026-11-25: after each qualified transition, maintain independent project code, versioning and releases, with selective upstream security backports rather than routine Bitcoin Core rebases. See [GS-LS-001, section 6](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md#6-independent-software-evolution-and-release-ownership). Existing release gates, chain continuity and transition scope remain unchanged.
 
+## Deferred source identity and architectural independence — Transition Release 2
+
+Adopted 2026-11-26: complete the first transition releases of all five cryptocurrencies before implementing systematic internal source rebranding. See [GS-LS-001, section 7](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md#7-source-identity-and-architectural-independence--transition-release-2) for the four-phase roadmap, migration scope, compatibility safeguards and per-coin qualification requirements. This is a deferred roadmap, not authorisation to rename current Transition Release 1 sources. Preserve upstream attribution and all existing release gates.
+
 ## Autonomous infrastructure recovery and read-only explorers
 
 Added 2026-11-24 following the EZHScan five-chain deployment. Apply these requirements to node-dependent services (explorers, miners, treasury workers and other scheduled integrations) without changing consensus:
