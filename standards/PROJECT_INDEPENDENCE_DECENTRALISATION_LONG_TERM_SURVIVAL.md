@@ -109,4 +109,30 @@ For each independent release, record the project version and tag, source ancestr
 
 **Standing rule:** Build on upstream knowledge, maintain our own software, and release only what we can independently verify.
 
+## 7. Source identity and architectural independence — Transition Release 2
+
+**Adopted:** 26 November 2026  
+**Status:** Deferred roadmap policy; implementation and qualification open (O).  
+**Scope:** Denzuve (DZUV), Aurzola (AUZV), Sestovi (SEZQ), Asveru (ASVR) and Duprezo (DPZE). AMLToken Revival remains in stasis.
+
+### Agreed programme phases
+
+| Phase | Objective | Entry / completion boundary |
+|---|---|---|
+| 1 — Functional modernisation | Complete Denzuve Transition Release 1, including presentation rebranding, modular RandomX and localisation, and all existing GSH gates. | Current priority; no expansion into wholesale internal renaming. |
+| 2 — Five-coin modernisation | Complete and separately qualify Transition Release 1 for the remaining four cryptocurrencies while preserving their existing networks. | All five first transition releases must be completed before Phase 3 implementation begins. |
+| 3 — Source identity and architectural independence | Transition Release 2: systematically migrate inherited Bitcoin-specific internal naming and rationalise project-owned architecture, starting with Denzuve as the reference implementation. | Separate authorised development branches, reviewed inventory, migration plan and per-coin qualification. |
+| 4 — Independent software evolution | Maintain project-owned architecture, versioning, release cycles and reusable modules; selectively review and port applicable upstream security improvements. | Standing long-term policy under section 6. |
+
+### Transition Release 2 scope and safeguards
+
+- Inventory inherited Bitcoin-named directories, source files, internal namespaces, CMake targets, generated headers, test executables, developer tooling, package metadata and obsolete branding references. Examples include bitcoin_node, bitcoin_wallet, bitcoin_common, test_bitcoin and bitcoin-build-info.h. These are examples to audit, not an unconditional rename list.
+- Prefer neutral names for genuinely shared components and coin-specific identities where appropriate. Preserve legitimate technical references to Bitcoin, all upstream Git ancestry, copyright notices, licences, attribution and security-fix provenance.
+- Classify every proposed rename as internal-only, external interface, persistent data or protocol-critical. Preserve genesis, chain history, balances, keys, monetary policy, signature domains, address/WIF prefixes, network magic, transaction/block serialisation, wallet database formats and consensus rules. Do not rename persistent data directories, RPC interfaces, configuration keys, service names or payment identifiers without a separately reviewed compatibility and migration plan.
+- Separate mechanical renames from behavioural changes; prohibit indiscriminate global replacement. Preserve qualified baselines, exact diffs, dependency pins, backup manifests and rollback instructions. Audit include paths, build graphs, tests, scripts, localisation, packaging and platform integrations.
+- Compare pre/post-rename behaviour with fixed cryptographic and consensus vectors, historical replay, wallet migration/recovery, independent peer interoperability, mining/staking and treasury tests where applicable. Run clean reproducible builds, complete regression inventories, proxy and restart/recovery tests, and 24–48-hour monitored stability on each exact release candidate. Explain any exclusions and obtain independent review and explicit release approval.
+- Treat the Denzuve implementation as a reusable methodology, not transferable proof of qualification. Record each coin's evidence and sign-off independently.
+
+**Standing scope rule:** Transition Release 1 remains focused on functional reliability and qualification. Internal source-identity migration is deferred until all five modernisations have completed their first transition releases. This roadmap does not authorise any current source edits, production deployment, consensus activation or public release.
+
 **Evidence policy:** This standard adds obligations and tests; it does **not** certify any project or authorise deployment, monetary-policy change, consensus fork, new coin issuance or production cutover. All existing GSH reliability/release gates remain applicable.
