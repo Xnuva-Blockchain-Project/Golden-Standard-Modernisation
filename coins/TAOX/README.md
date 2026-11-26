@@ -114,6 +114,26 @@ K19C read-only audit recovered four failure logs (miner, peerman, headers sync c
 
 See [historical cryptographic identity and inherited regression adaptation](../../standards/README.md#historical-cryptographic-identity-and-inherited-regression-adaptation).
 
+## 26 November 2026 — Denzuve residual regression and end-of-day preservation (K20E-A / K20E-EOD)
+
+**Evidence status: P (operator-reported scoped results); release HOLD.** Published development branch `modernisation/denzuve-transition-release-1` at [db9030752e3d9e2e308f6cfe7a72e2537a50e7fc](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/db9030752e3d9e2e308f6cfe7a72e2537a50e7fc); operator reported matching local and remote commits, seven commits pushed from adc7ac5, all twelve executable checksums and regression evidence manifest verified, localisation pin unchanged. No release or production activation.
+
+Provisional cumulative ledger: 153 PASS, 2 FAIL, 1 TIMEOUT, 1 SKIPPED of 157 registered suites (97.45%); opening ledger 131 PASS, 22 recovered. This combines results across builds and is not a fresh complete regression.
+
+| Residual suite | Outcome | Evidence |
+|---|---|---|
+| blockfilter_index_tests | P | 515/515 assertions; 149 s |
+| miner_tests | P | 868/868 assertions; 222 s |
+| validation_chainstate_tests | P | 43/43 assertions; 454 s |
+| validation_tests | B | 28,450/28,451 assertions; empty-vector snapshot height accessor confirmed; correction documented but not applied |
+| validation_chainstatemanager_tests | B | 1,593/1,597 assertions; four repeated transaction-count mismatches (111 versus 0), cause pending |
+| headers_sync_chainwork_tests | B | 14,400 s timeout; 14,999 first-chain headers and at least 8,000 second-chain headers generated; validation stage not reached |
+| External script assets | O | Authentic pinned fixture and execution outstanding |
+
+Native height-110 snapshot reference reproduced in two isolated runs of the same implementation; block hash `5c97e9cb92ef0fecd33e7d61346af610af69437807f5e7bf0296287231c4e21b`, UTXO commitment `b952555c8ab81fec46f3d4253b7af256d766ceb39fb7752b9d18cdf4a0141327`, 111 chain transactions, 110 outputs, 550000000000 base units. Test-only trust; production snapshot metadata unchanged. Reference data preserved in source. First header chain took 9592.43 s, 30078 attempts and 938 seed initialisations; investigate performance without bypassing PoW or reducing workload.
+
+**Next session:** correct metadata enumeration, investigate transaction-count assertion, qualify full headers workload and authentic external script assets, then fresh complete 157-suite regression. Historical replay, legacy wallet migration, independent network acceptance, cross-machine/proxy/recovery, sustained 24–48h operation, rollback and clean release qualification remain mandatory. Raw evidence and binary digests retained offline; exact file digests NOT RECORDED here. No independent sign-off claimed. No public release or mainnet activation authorised.
+
 ## Completed / outstanding tests
 
 See [the 35-item RandomX register](../../randomx/checklist.md). It distinguishes reported PASS from O / blocked. The major remaining gates are real adversarial P2P presync/redownload; future-block propagation; wallet changes and reorg cases; full historic Tao chain and UTXO/wallet equivalence; clean release builds, 24–48h soak, rollback and independent review.
