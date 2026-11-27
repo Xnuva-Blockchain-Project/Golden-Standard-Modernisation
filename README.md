@@ -35,7 +35,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 
 ## Programme sequencing — 27 November 2026
 
-The project will first modernise and qualify pre-releases for all five currencies, then advance them individually to full releases. Denzuve (DZUV) is first, followed immediately by Aurzola (AUZV). The remaining order is provisional: Sestovi (SEZQ), Asveru (ASVR), Duprezo (DPZE). AMLToken Revival remains outside this programme in stasis.
+The project will first modernise and qualify pre-releases for all five currencies, then advance them individually to full releases. Denzuve (DZUV) is first, followed immediately by Aurzola (AUZV). Duprezo (DPZE, formerly XNUVA) is third, followed by the two hybrid PoW/PoS currencies, Sestovi (SEZQ) and Asveru (ASVR), whose relative order remains provisional. This prioritises Aurzola's operational urgency and reuse of the existing modern XNUVA core and RandomX foundation, while deferring the additional PoS integration complexity. Existing working functionality must be preserved and independently qualified. AMLToken Revival remains outside this programme in stasis.
 
 ### Stage 1 — Qualified transition pre-releases
 
