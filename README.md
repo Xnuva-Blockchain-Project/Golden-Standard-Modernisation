@@ -33,6 +33,20 @@ This repository is the canonical engineering handbook and evidence *index* for t
 | Evidence and checksums | [evidence/](evidence/README.md) | SHA-256, test logs, binary/source provenance and sign-off templates |
 | Complete historical handbook | [GSH v1.16 archive](GOLDEN_STANDARD_CRYPTO_MODERNISATION.md) | Original full text, including all previous revision history, unchanged |
 
+## Programme sequencing — 27 November 2026
+
+The project will first modernise and qualify pre-releases for all five currencies, then advance them individually to full releases. Denzuve (DZUV) is first, followed immediately by Aurzola (AUZV). The remaining order is provisional: Sestovi (SEZQ), Asveru (ASVR), Duprezo (DPZE). AMLToken Revival remains outside this programme in stasis.
+
+### Stage 1 — Qualified transition pre-releases
+
+Complete mandatory per-coin Golden Standard qualification, preserve historical chain and wallet continuity, monetary policy and network identity, and establish a reliable modernised baseline. Publish only explicitly approved pre-release artifacts with clear scope, limitations and activation status. No public distribution, production cutover or mainnet activation is implied by a development checkpoint or pre-release label. The graphical one-click CPU mining button, dashboard and optional mining controls are deferred; functional RandomX mining qualification remains mandatory where applicable. No mandatory safety or reliability gate is waived.
+
+### Stage 2 — Individual full releases
+
+After all five qualified pre-releases, revisit Denzuve first, then advance each currency individually to full release. Develop optional graphical mining functionality as a reusable module, independently qualify its integration for each currency, and complete applicable packaging, usability, security, compatibility and production readiness gates. Each release and any forward-only consensus activation requires separate explicit approval. The existing Transition Release 2 source-identity and independence policy remains unchanged.
+
+Reliability first. Release second.
+
 ## Cryptocurrency records
 
 | Coin | History and tests | RandomX migration status |
