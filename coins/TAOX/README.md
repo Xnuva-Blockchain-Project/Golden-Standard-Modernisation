@@ -134,6 +134,23 @@ Native height-110 snapshot reference reproduced in two isolated runs of the same
 
 **Next session:** correct metadata enumeration, investigate transaction-count assertion, qualify full headers workload and authentic external script assets, then fresh complete 157-suite regression. Historical replay, legacy wallet migration, independent network acceptance, cross-machine/proxy/recovery, sustained 24–48h operation, rollback and clean release qualification remain mandatory. Raw evidence and binary digests retained offline; exact file digests NOT RECORDED here. No independent sign-off claimed. No public release or mainnet activation authorised.
 
+## 27 November 2026 — Residual regression completion and preservation (K20F-B–G)
+
+**Evidence status: P (operator-reported scoped PASS); release HOLD.** The cumulative ledger is now 157/157 PASS across successive development builds, recovering the original 25 failures and one skipped suite. This is not a fresh complete run on a single final committed build.
+
+| Suite | Result | Scope |
+|---|---|---|
+| headers_sync_chainwork_tests | P | 3/3 cases, 79/79 assertions, 44,567 s, exit 0 |
+| script_assets_tests | P | 1/1 case, 141,917/141,917 assertions, exit 0 |
+| validation_chainstatemanager_tests | P | 2,779 s, exit 0 |
+| validation_tests | P | Exit 0 |
+
+K20F-B corrected snapshot metadata height enumeration and fixture-specific lookup, and parallelised independent RandomX header generation without reducing the workload. Both chains (14,999 and 14,998 headers) completed, with 938 seed initialisations each; first chain 9,858 s, second 9,771.27 s. Sneaky redownload 18/18, happy path 48/48, insufficient work 13/13 assertions passed. K20F-C pinned the external script assets to bitcoin-core/qa-assets commit `2e9ddaf8b12b11485104d9b09eac0540ca6c0914`, file SHA-256 `cd789a58ec45916e1721cdd14e82ca4c93100959f1cef4e229b22e3bf539f095`. K20F-D compiled the corrected candidate; K20F-E executed all four residual suites successfully.
+
+The final test completed at 21:42:04 UTC, before an unexpected reboot at approximately 21:51 UTC. Cause unconfirmed. K20F-F verified the three source digests, twelve executable digests, all four results and collective evidence manifest after reboot. K20F-G published three corrected files (61 insertions, 21 deletions) at [80e9c95592f1bc06565ce192aeba7f28edce1a49](https://github.com/Xnuva-Blockchain-Project/Denzuve/commit/80e9c95592f1bc06565ce192aeba7f28edce1a49); local and remote development commits reported identical and tracked working tree clean. No recompilation after commit; tested binaries correspond to the verified pre-commit source corrections, not a newly built clean committed candidate. Exact executable digests retained operator-locally, NOT RECORDED here. No independent sign-off claimed.
+
+**Next session — 28 November target:** essential controlled-test experimental pre-release qualification, verified packaging and documented limitations; defer optional GUI mining and other non-fundamental enhancements. Publication requires applicable safety gates and explicit approval. Fresh final-build regression, historical chain and wallet compatibility, independent network/cross-machine and proxy qualification, sustained operation, resource review and rollback remain outstanding unless separately evidenced. No production wallet migration, mainnet activation or production release authorised. Following the experimental baseline, prioritise Aurzola modernisation; Sunday remains reserved for decentralised exchange research. See [programme sequencing](../../README.md#programme-sequencing--27-november-2026).
+
 ## Completed / outstanding tests
 
 See [the 35-item RandomX register](../../randomx/checklist.md). It distinguishes reported PASS from O / blocked. The major remaining gates are real adversarial P2P presync/redownload; future-block propagation; wallet changes and reorg cases; full historic Tao chain and UTXO/wallet equivalence; clean release builds, 24–48h soak, rollback and independent review.
