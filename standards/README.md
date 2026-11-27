@@ -22,6 +22,10 @@ Adopted 2026-11-25: after each qualified transition, maintain independent projec
 
 Adopted 2026-11-26: complete the first transition releases of all five cryptocurrencies before implementing systematic internal source rebranding. See [GS-LS-001, section 7](PROJECT_INDEPENDENCE_DECENTRALISATION_LONG_TERM_SURVIVAL.md#7-source-identity-and-architectural-independence--transition-release-2) for the four-phase roadmap, migration scope, compatibility safeguards and per-coin qualification requirements. This is a deferred roadmap, not authorisation to rename current Transition Release 1 sources. Preserve upstream attribution and all existing release gates.
 
+## Mandatory website deployment and recovery
+
+Adopted 2026-11-27: [GS-WEB-001 — Website deployment and recovery](WEBSITE_DEPLOYMENT_RECOVERY.md) establishes W01–W12 for all project websites and applicable production integrations. **No verified backup — no deployment. No verified rollback procedure — no deployment.** Preserve the actual hosted baseline outside the public root and in an independent recovery copy; never rely on hosting trash or confuse development source with hosting-ready artifacts. Existing release gates remain in force.
+
 ## Autonomous infrastructure recovery and read-only explorers
 
 Added 2026-11-24 following the EZHScan five-chain deployment. Apply these requirements to node-dependent services (explorers, miners, treasury workers and other scheduled integrations) without changing consensus:
