@@ -22,6 +22,7 @@ This repository is the canonical engineering handbook and evidence *index* for t
 | Area | Where to go | Purpose |
 |---|---|---|
 | Shared standards | [standards/](standards/README.md) | Safety, backups, historical continuity, independent network acceptance and release/rollback gates |
+| **Website deployment and recovery** | [GS-WEB-001 — W01–W12](standards/WEBSITE_DEPLOYMENT_RECOVERY.md) | Mandatory independent backups, hosting-ready provenance, verification and rollback |
 | **Mandatory proxy release gate** | [SOCKS5/Tor qualification standard](standards/MANDATORY_PROXY_COMPATIBILITY_RELEASE_GATE.md) | Required per-coin proxy/no-leak tests on actual modernised binaries before release; Tor v3 claims separately gated |
 | **Node operator privacy** | [Tor, SOCKS5 and VPN guide](standards/NODE_PRIVACY_TOR_SOCKS5.md) | Optional node networking, current per-coin caveats, troubleshooting and privacy checks |
 | **Project identity and transparency** | [Identity and research accuracy standard](standards/PROJECT_IDENTITY_TRANSPARENCY.md) | Canonical network identifiers, no-sale policy, AI research regression checks |
